@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Today</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div class="box" id="heading">
+            <h1><%=day%></h1>
+        </div>
+        <div class="box">
+            <%for(var i=0;i<newi.length;i++){%>
+            <div class="item">
+                <input type="checkbox">
+                <p><%=newi[i]%></p>
+            </div>
+            <%}%>
+            <form class="item" action="/" method="POST">
+                <input type="text" name="t1" placeholder="New Item" autocomplete="off">
+                <button type="submit" name="btn">+</button>
+            </form>
+        </div> 
+    </body>
+</html>
