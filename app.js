@@ -1,6 +1,23 @@
 //jshint esversion:6
 
-const express = require("express");
+//Database connectivity part
+const mysql = require('mysql');
+const db = mysql.createConnection({
+    host     : 'localhost',
+    user     : 'root',
+    password : '',
+    charset  :'UTF8',
+    port     :'3306',
+    database :'animal_species_repository'
+});
+db.connect((err) => {
+    if(err){
+        throw err;
+    }
+    console.log('MySql Connected...');
+});
+
+
 const bodyParser = require("body-parser");
 const app = express();
 var items=["Buy food",
